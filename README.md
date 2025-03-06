@@ -23,6 +23,14 @@ Execute o programa com o seguinte comando: go run cmd/clipboard-monitor/main.go
 
 O programa começará a monitorar a área de transferência e exibirá notificações quando novos conteúdos forem copiados.
 
+## Compilação
+Para compilar o executável, use o seguinte comando:
+
+```sh
+go build -ldflags "-H=windowsgui" -o ClipboardMonitor.exe cmd/clipboard-monitor/main.go
+```
+
+
 ## Licença
 
 [MIT License](LICENSE)

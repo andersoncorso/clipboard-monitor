@@ -35,8 +35,14 @@ func main() {
             continue
         }
 
+        // Se o conteúdo for vazio, significa que não é texto, então ignoramos
+        if content == "" {
+            time.Sleep(time.Second)
+            continue
+        }
+
         if content != lastContent {
-            log.Printf("Novo conteúdo detectado: %s", content)
+            log.Printf("Novo conteúdo de texto detectado: %s", content)
 
             // Verificar se o conteúdo é um IP válido e está na lista de redes
             if info := ipchecker.CheckIP(content, networks); info != "" {

@@ -48,6 +48,7 @@ go build -ldflags "-H=windowsgui" -o ClipboardMonitor.exe cmd/clipboard-monitor/
 Para orientações sobre como criar o instalador usando o Inno Setup, consulte o arquivo installer/INSTALLER.md.
 
 
+
 ## Licença
 
-[MIT License](LICENSE)
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.

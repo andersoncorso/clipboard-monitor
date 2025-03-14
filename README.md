@@ -1,15 +1,22 @@
 # Clipboard Monitor
 
-Este projeto monitora a área de transferência do Windows 11+ e exibe notificações discretas quando novos conteúdos são copiados.
+Monitora a área de transferência do Windows e exibe notificações caso o conteúdo copiado esteja na lista pré-definida para ser noticado.
+Ex.:
+10.71.12.0/24 | 01 - Matriz (São Paulo)
+10.71.13.0/24 | 02 - Filia de Osasco
+10.71.14.0/24 | 03 - Brasília DF
+
+Ao copiar algum IP, ele identificará e exibirá a notificação informando o resultado após o "|".
+
 
 ## Requisitos
 
 - Go 1.16 ou superior
-- Windows 11+
+- Windows 10 e 11
 
 ## Desenvolvimento
 
-1. Clone o repositório: git clone https://github.com/yourusername/clipboard-monitor.git
+1. Clone o repositório: git clone https://github.com/andersoncorso/clipboard-monitor
 
 2. Entre no diretório do projeto: cd clipboard-monitor
 
@@ -34,7 +41,6 @@ Para compilar o executável, use o seguinte comando:
 ```sh
 go build -ldflags "-H=windowsgui" -o ClipboardMonitor.exe cmd/clipboard-monitor/main.go
 ```
-
 
 
 ## Como Criar o Instalador Windows

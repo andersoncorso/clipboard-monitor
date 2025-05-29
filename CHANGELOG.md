@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.0.0] - 2025-03-14
+## [1.0.1] - 2025-05-29
 
-### Versão inicial
-- Monitoramento da área de transferência do Windows para IP de rede. 
+### Versão 1.0.1
+- Inicialização automática do Windows implementada ao instalar o aplicativo. 

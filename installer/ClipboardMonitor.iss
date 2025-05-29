@@ -1,5 +1,5 @@
 #define Name "Clipboard Monitor"
-#define Version "1.0"
+#define Version "1.0.1"
 #define Publisher "Cupinxas ltda."
 #define URL "https://github.com/andersoncorso/clipboard-monitor"
 #define ExeName "ClipboardMonitor.exe"
@@ -43,3 +43,6 @@ Name: "{autodesktop}\{#Name}"; Filename: "{app}\{#ExeName}"; Tasks: desktopicon;
 
 [Run]
 Filename: "{app}\{#ExeName}"; Description: "{cm:LaunchProgram,{#StringChange(Name, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
+
+[Registry]
+Root: HKCU; Subkey: "Software\Microsoft\Windows\CurrentVersion\Run"; ValueType: string; ValueName: "{#Name}"; ValueData: """{app}\{#ExeName}"""; Flags: uninsdeletevalue

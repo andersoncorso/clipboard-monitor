@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	"net"
 	"os"
 	"path/filepath"
 	"strings"
@@ -86,8 +87,24 @@ func main() {
                 if err != nil {
                     log.Printf("Erro ao exibir notificação: %v", err)
                 }
-            } else {
-                log.Println("IP não encontrado na lista ou conteúdo não é um IP válido")
+            } else if isHostname(content) {
+                // Se for um hostname, resolve o IP
+                ips, err := net.LookupIP(content)
+                if err != nil {
+                    log.Printf("Erro ao resolver hostname: %v", err)
+                    continue
+                }
+                for _, ip := range ips {
+                    if info := ipchecker.CheckIP(ip.String(), networks); info != "" {
+                        // Se o IP do hostname estiver na lista, prepara e exibe uma notificação
+                        notificationMessage := "Hostname resolvido: " + content + "\nIP encontrado: " + ip.String() + "\n" + info
+                        err := notification.Show("Clipboard Monitor", notificationMessage)
+                        if err != nil {
+                            log.Printf("Erro ao exibir notificação: %v", err)
+                        }
+                        break
+                    }
+                }
             }
 
             // Atualiza o último conteúdo processado
@@ -98,4 +115,9 @@ func main() {
         // Isso evita uso excessivo de CPU
         time.Sleep(time.Second)
     }
+}
+
+// Verifica se o conteúdo é um hostname válido
+func isHostname(content string) bool {
+    return strings.HasPrefix(content, "LP") || strings.HasPrefix(content, "DT") || strings.HasPrefix(content, "FILA")
 }

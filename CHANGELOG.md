@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.0.1] - 2025-05-29
+## [1.1.0] - 2025-05-29
 
-### Versão 1.0.1
-- Inicialização automática do Windows implementada ao instalar o aplicativo. 
+### Features:
+- Inicialização automática do Windows implementada no instalador do sistema. 

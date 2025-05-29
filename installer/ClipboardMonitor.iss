@@ -1,5 +1,5 @@
 #define Name "Clipboard Monitor"
-#define Version "1.0.1"
+#define Version "1.1.0"
 #define Publisher "Cupinxas ltda."
 #define URL "https://github.com/andersoncorso/clipboard-monitor"
 #define ExeName "ClipboardMonitor.exe"
